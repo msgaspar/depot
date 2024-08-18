@@ -12,7 +12,7 @@ class CombineItemsInCart < ActiveRecord::Migration[7.2]
 
           # replace with a single item
           item = cart.line_items.build(product_id: product_id)
-          items.quantity = quantity
+          item.quantity = quantity
           item.save!
         end
       end
